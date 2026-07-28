@@ -1,426 +1,103 @@
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WN MANUTENÇÃO ELÉTRICA - Especialistas em manutenção de redes elétricas e infraestrutura completa para eventos, feiras e congressos.">
-    <title>WN MANUTENÇÃO ELÉTRICA - Engenharia e Eventos</title>
-    <style>
-        :root {
-            --primary: #1a237e; /* Azul Indigo */
-            --secondary: #ffc107; /* Dourado Âmbar (Iluminação) */
-            --dark: #0d1117;
-            --light: #f8f9fa;
-            --white: #ffffff;
-            --text: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central de Atendimento</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--white);
-        }
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#e31212; /* Vermelho Vibrante estilo Claro/Ferrari */
+color:white;
+text-align:center;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.container{
+padding:40px 20px;
+}
 
-        /* Header */
-        header {
-            background: var(--white);
-            border-bottom: 4px solid var(--primary);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+.logo{
+font-size:30px;
+font-weight:bold;
+margin-bottom:10px;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
 
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.sub{
+color:white; /* Branco puro para máximo contraste sobre o vermelho */
+margin-bottom:40px;
+opacity: 0.9;
+}
 
-        .logo {
-            font-size: 26px;
-            font-weight: 900;
-            color: var(--primary);
-            text-decoration: none;
-            letter-spacing: -1px;
-        }
+.card{
+background:#ffffff; /* Card branco para destacar sobre o fundo vermelho vibrante */
+color: #e31212; /* Texto do card em vermelho */
+margin:15px auto;
+padding:25px;
+border-radius:15px;
+max-width:320px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
 
-        .logo span { color: var(--secondary); }
+.card h3{
+margin-top:0;
+font-weight: 800;
+}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+.card p {
+color: #333; /* Texto secundário do card em cinza escuro para leitura */
+}
 
-        nav a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
+.btn{
+display:block;
+background:#25d366; /* Verde WhatsApp */
+color:white;
+text-decoration:none;
+padding:14px;
+border-radius:10px;
+margin-top:15px;
+font-weight:bold;
+font-size: 16px;
+transition: 0.3s;
+}
 
-        nav a:hover { color: var(--secondary); }
+.btn:hover{
+transform: scale(1.05);
+background: #1eb954;
+}
 
-        /* Hero */
-        .hero {
-            background: linear-gradient(rgba(26, 35, 126, 0.85), rgba(13, 17, 23, 0.9)), url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 120px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 35px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 16px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-
-        .btn-primary {
-            background: var(--secondary);
-            color: var(--dark);
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05);
-            background: var(--white);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background: var(--light);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--secondary);
-        }
-
-        .card:hover { transform: translateY(-10px); }
-
-        .card i {
-            font-size: 45px;
-            color: var(--primary);
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        /* About & Info */
-        .about { padding: 100px 0; }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .legal-card {
-            background: var(--primary);
-            color: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-        }
-
-        .legal-card h3 { color: var(--secondary); margin-bottom: 20px; }
-
-        .legal-item {
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
-        }
-
-        .legal-item label {
-            display: block;
-            font-size: 11px;
-            text-transform: uppercase;
-            opacity: 0.7;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: #999;
-            padding: 80px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-h4 { color: var(--white); margin-bottom: 25px; }
-
-        .footer-links { list-style: none; }
-
-        .footer-links li { margin-bottom: 12px; }
-
-        .footer-links a { color: #999; text-decoration: none; font-size: 14px; transition: 0.3s; }
-
-        .footer-links a:hover { color: var(--secondary); }
-
-        .footer-bottom {
-            text-align: center;
-            border-top: 1px solid #333;
-            padding-top: 30px;
-            font-size: 12px;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            overflow-y: auto;
-        }
-
-        .modal-content {
-            background: var(--white);
-            margin: 5% auto;
-            padding: 40px;
-            width: 90%;
-            max-width: 700px;
-            border-radius: 10px;
-        }
-
-        .close { float: right; font-size: 28px; cursor: pointer; }
-
-        /* WhatsApp */
-        .whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            text-decoration: none;
-            z-index: 1500;
-        }
-
-        @media (max-width: 768px) {
-            .info-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 32px; }
-            nav { display: none; }
-        }
-    </style>
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="container header-flex">
-            <a href="#" class="logo">WN <span>ELÉTRICA</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#empresa">A Empresa</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<div class="container">
 
-    <section class="hero">
-        <div class="container">
-            <h1>Engenharia Elétrica e Infraestrutura para Eventos</h1>
-            <p>Especialistas em manutenção de redes de energia e soluções completas em sonorização, iluminação e estruturas temporárias.</p>
-            <a href="https://wa.me/5511999999999" class="btn btn-primary">Solicitar Orçamento Agora</a>
-        </div>
-    </section>
+<div class="logo">SUPORTE AO CLIENTE</div>
+<div class="sub">Escolha uma opção de atendimento</div>
 
-    <section class="services" id="servicos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nossas Soluções</h2>
-                <p>Do suporte técnico à rede elétrica até a produção completa do seu evento.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <i>⚡</i>
-                    <h3>Manutenção de Redes</h3>
-                    <p>Manutenção técnica em redes de distribuição e instalações elétricas complexas. (CNAE 42.21-9-03)</p>
-                </div>
-                <div class="card">
-                    <i>🎭</i>
-                    <h3>Eventos e Estruturas</h3>
-                    <p>Organização de feiras, congressos e aluguel de palcos e coberturas temporárias. (CNAE 82.30-0-01)</p>
-                </div>
-                <div class="card">
-                    <i>💡</i>
-                    <h3>Som e Iluminação</h3>
-                    <p>Atividades profissionais de sonorização e iluminação para festas e exposições. (CNAE 90.01-9-06)</p>
-                </div>
-                <div class="card">
-                    <i>🚜</i>
-                    <h3>Aluguel de Máquinas</h3>
-                    <p>Locação de equipamentos comerciais e industriais para suporte operacional. (CNAE 77.39-0-99)</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Sem conexão ou Instabilidade</h3>
+<p>Fale com um atendente agora</p>
+<a class="btn" href="https://wa.me/5514920030892">Abrir WhatsApp</a>
+</div>
 
-    <section class="about" id="empresa">
-        <div class="container">
-            <div class="info-grid">
-                <div>
-                    <h2>Excelência Técnica e Operacional</h2>
-                    <p>A WN MANUTENÇÃO ELÉTRICA LTDA é uma empresa versátil, preparada para atender tanto demandas críticas de engenharia elétrica quanto a infraestrutura completa de grandes eventos.</p>
-                    <p>Localizada na Av. Prefeito Erotides Batista, atuamos com rigor técnico e criatividade para entregar soluções que superam as expectativas de nossos clientes.</p>
-                </div>
-                <div class="legal-card">
-                    <h3>Dados Corporativos</h3>
-                    <div class="legal-item">
-                        <label>Razão Social</label>
-                        <strong>WN MANUTENÇÃO ELÉTRICA LTDA</strong>
-                    </div>
-                    <div class="legal-item">
-                        <label>CNPJ</label>
-                        <strong>17.908.761/0001-49</strong>
-                    </div>
-                    <div class="legal-item">
-                        <label>Endereço</label>
-                        <strong>Av. Prefeito Erotides Batista - Brasil</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<h3>Suporte Técnico</h3>
+<p>Internet lenta ou sem conexão</p>
+<a class="btn" href="https://wa.me/5514920030892">Solicitar Suporte</a>
+</div>
 
-    <footer id="contato">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 class="footer-h4">WN Elétrica & Eventos</h4>
-                    <p>Sua parceira em engenharia elétrica e infraestrutura de entretenimento.</p>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-h4">Políticas</h4>
-                    <ul class="footer-links">
-                        <li><a href="javascript:void(0)" onclick="openModal('privacy')">Política de Privacidade</a></li>
-                        <li><a href="javascript:void(0)" onclick="openModal('terms')">Termos de Uso</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-h4">Contato</h4>
-                    <p style="font-size: 14px;">Segunda a Sexta: 08h às 18h</p>
-                    <p style="font-size: 14px; margin-top: 10px;">Email: contato@wneletrica.com.br</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 WN MANUTENÇÃO ELÉTRICA LTDA. CNPJ: 17.908.761/0001-49. Todos os direitos reservados.</p>
-                <p style="margin-top: 10px; opacity: 0.5;">Este site é independente e não possui vínculo oficial com Google Ads ou Facebook Ads.</p>
-            </div>
-        </div>
-    </footer>
+<div class="card">
+<h3>Guia atualizada</h3>
+<p>Atualização</p>
+<a class="btn" href="https://wa.me/5514920030892">Falar com Atendente</a>
+</div>
 
-    <a href="https://wa.me/5511999999999" class="whatsapp">💬</a>
+</div>
 
-    <!-- Modals -->
-    <div id="privacy" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('privacy')">&times;</span>
-            <h2>Política de Privacidade</h2>
-            <p style="margin-top: 20px;">A WN MANUTENÇÃO respeita sua privacidade. Coletamos dados apenas via contato direto para fins de orçamento e suporte técnico. Seus dados são protegidos e nunca compartilhados sem autorização.</p>
-        </div>
-    </div>
-
-    <div id="terms" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('terms')">&times;</span>
-            <h2>Termos de Uso</h2>
-            <p style="margin-top: 20px;">Ao utilizar este site, você concorda que o conteúdo é informativo. Orçamentos de eventos e elétrica dependem de análise de projeto e disponibilidade de agenda.</p>
-        </div>
-    </div>
-
-    <script>
-        function openModal(id) { document.getElementById(id).style.display = "block"; }
-        function closeModal(id) { document.getElementById(id).style.display = "none"; }
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') { event.target.style.display = "none"; }
-        }
-    </script>
 </body>
 </html>
